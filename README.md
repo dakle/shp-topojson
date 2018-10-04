@@ -25,6 +25,11 @@ Install topojson ( global )
 npm install -g topojson
 ```
 
+Install http-server ( optional for local serving of the included index.html file )
+```
+npm install -g http-server
+```
+
 ## Using the CLI to convert your files
 
 ### .shp > geoJSON
@@ -81,6 +86,13 @@ The nc-q.json topoJSON file is ~ 1.4 MB
 The nc-q-filtered topoJSON file is 774 KB
 
 Depending on what properties you need to retain and how much you quantize the topoJSON results, your file sizes may vary. 
+
+To view the d3 SVG map, make sure you are in the base directory and start up http-server
+```
+http-server
+```
+
+This should server your index.html file at the following url http://127.0.0.1:8080 or http://localhost:8080 ( port number may vary )
 
 ## Resources
 [.shp > topoJSON](https://medium.com/@mbostock/command-line-cartography-part-3-1158e4c55a1e) - explaination from Mike Bostock on preparing your .shp file for d3.js mapping.

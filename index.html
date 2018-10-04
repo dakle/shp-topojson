@@ -32,10 +32,10 @@
       console.log("topojson", topology)
       var geojson = topojson.feature(topology, topology.objects.ncFiltered);
       console.log("geojson", geojson)
+      /* Wilmington, NC has the following coordinates 34.210537, -77.889713 so we'll use that for our center and rotate values */
       var projection = d3.geo.albers()
       .center([0, 34.210537])
       .rotate([77.889713, 0])
-      .parallels([41,44])
       .scale(50000)
       .translate([width / 2, height / 2]);
 
