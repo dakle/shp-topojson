@@ -46,9 +46,9 @@ geo2topo input_file.json -q 500 > output_file.json
 ```
 
 ## Example
-In the following example we will be starting with the S_FLD_HAZ_AR.shp file ( as well as the other mandatory files that make up the shapefile ). Before any modification these files add up to about 38 MB in size.
+In the following example we will be starting with the S_FLD_HAZ_AR.shp file ( as well as the other mandatory files that make up the shapefile ). Before any modification these files add up to ~38 MB in size.
 
-We will start by converting the shapefile to a geoJSON format with a new filename nc-geo.json. Please note that all files are in the build folder and will be reflected in the example commands.
+We will start by converting the shapefile to a geoJSON format with a new filename ncgeo.json. Please note that all files are in the build folder and will be reflected in the example commands.
 ```
 ogr2ogr -f "GeoJSON" build/ncgeo.json build/S_FLD_HAZ_AR.shp
 ```
@@ -76,6 +76,8 @@ We should now have a much more manageable sized file to use in building our d3.j
 The nc-q.json topoJSON file is ~ 1.4 MB
 
 The nc-q-filtered topoJSON file is 774 KB
+
+Depending on what properties you need to retain and how much you quantize the topoJSON results, your file sizes may vary. 
 
 ## Resources
 [.shp > topoJSON](https://medium.com/@mbostock/command-line-cartography-part-3-1158e4c55a1e) - explaination from Mike Bostock on preparing your .shp file for d3.js mapping.
