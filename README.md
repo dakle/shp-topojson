@@ -33,7 +33,7 @@ The following command converts your .shp file to a geoJSON file.
 ogr2ogr -f "GeoJSON" output_file.json input_file.shp
 ```
 
-### filtering
+### Filtering
 Properties can be filtered from the .shp file when you create the geoJSON object by using the -select parameter for ogr2ogr and including a comma separated list.
 ```
 ogr2ogr -f "GeoJSON" output_file.json input_file.shp -select "PROPERTY_NAME_1, PROERTY_NAME_2"
