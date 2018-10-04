@@ -59,6 +59,9 @@ From here we can see that the object contains a lot of properties. Say we only w
 ogr2ogr -f "GeoJSON" build/ncFiltered.json build/S_FLD_HAZ_AR.shp -select "FLD_AR_ID,FLD_ZONE"
 ```
 
+* Note - ogr2ogr will throw an error if you are outputting a filename that already exists *
+
+
 This new geoJSON object is still pretty large 104 MB
 
 We can now use topojson to quantize it and convert it to a topoJSON format.
