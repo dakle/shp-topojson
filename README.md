@@ -47,4 +47,5 @@ toposimplify -p 1 -f < input_file.json > output_file.json
 
 ## Resources
 [.shp > topoJSON](https://medium.com/@mbostock/command-line-cartography-part-3-1158e4c55a1e) - explaination from Mike Bostock on preparing your .shp file for d3.js mapping.
+
 [Line simplification](https://bost.ocks.org/mike/simplify/) - explaination from Mike Bostock on line simplification.
