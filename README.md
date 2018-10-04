@@ -41,6 +41,9 @@ geo2topo input_file.json -q 500 > output_file.json
 
 ### Simplify
 The following command can be used to further simplify your topoJSON file size by removing coordinates
+```
+toposimplify -p 1 -f < input_file.json > output_file.json
+```
 
 ## Resources
 [.shp > topoJSON](https://medium.com/@mbostock/command-line-cartography-part-3-1158e4c55a1e) - explaination from Mike Bostock on preparing your .shp file for d3.js mapping.
