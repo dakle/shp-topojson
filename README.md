@@ -48,27 +48,27 @@ geo2topo input_file.json -q 500 > output_file.json
 ## Example
 In the following example we will be starting with the S_FLD_HAZ_AR.shp file ( as well as the other mandatory files that make up the shapefile ). Before any modification these files add up to about 38 MB in size.
 
-We will start by converting the shapefile to a geoJSON format with a new filename nc-geo.json
+We will start by converting the shapefile to a geoJSON format with a new filename nc-geo.json. Please note that all files are in the build folder and will be reflected in the example commands.
 ```
-ogr2ogr -f "GeoJSON" ncgeo.json S_FLD_HAZ_AR.shp
+ogr2ogr -f "GeoJSON" build/ncgeo.json build/S_FLD_HAZ_AR.shp
 ```
 This newly created geoJSON object is now 105 MB
 
-From here we can see that the object contains a lot of properties. Say we only want to use the FLD_AR_ID and the FLD_ZONE properties, we can use the -select parameter for ogr2ogr to only output those two properties in our geoJSON object.
+From here we can see that the object contains a lot of properties. Say we only want to use the FLD_AR_ID and the FLD_ZONE properties, we can use the -select parameter for ogr2ogr to only output those two properties in our geoJSON object. We will give it a differnt name to keep them separate - ncFiltered.json
 ```
-ogr2ogr -f "GeoJSON" ncFiltered.json S_FLD_HAZ_AR.shp -select "FLD_AR_ID,FLD_ZONE"
+ogr2ogr -f "GeoJSON" build/ncFiltered.json build/S_FLD_HAZ_AR.shp -select "FLD_AR_ID,FLD_ZONE"
 ```
 
 This new geoJSON object is still pretty large 104 MB
 
-We can now use topojson to quantize it and convert it to a topoJSON format
+We can now use topojson to quantize it and convert it to a topoJSON format.
 ```
-geo2topo ncgeo.json -q 500 > nc-q.json
+geo2topo build/ncgeo.json -q 500 > build/nc-q.json
 ```
 
 or for the filtered version
 ```
-geo2topo ncFiltered.json -q 500 > nc-q-filtered.json
+geo2topo build/ncFiltered.json -q 500 > build/nc-q-filtered.json
 ```
 
 We should now have a much more manageable sized file to use in building our d3.js map. 
